@@ -120,6 +120,7 @@ section {
     -webkit-text-stroke: .7px var(--main_color);
     background-image: linear-gradient(var(--main_color), var(--main_color));
     background-repeat: no-repeat;
+    background-clip: border-box;
     -webkit-background-clip: text;
     background-position: -33rem 0;
 }
@@ -744,6 +745,12 @@ section:nth-child(odd) .animate-scroll,
     }
 }
 
+@media (max-width: 850px) {
+    .animate.home-img {
+        width: 55%;
+    }
+}
+
 @media (max-width: 768px) {
     .header {
         background: var(--bg-color);
@@ -848,7 +855,9 @@ section:nth-child(odd) .animate-scroll,
         flex-direction: column;
         text-align: center;
     }
-    .home-content h1 {}
+    .home-content h1 {
+        font-size: 5rem;
+    }
 }
 
 
