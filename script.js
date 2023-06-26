@@ -53,3 +53,26 @@ window.onscroll = () => {
 let footer = document.querySelector('footer');
 
 footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
+
+
+// Contact Page Local Storage
+
+const contactForm = document.getElementById("contactForm");
+contactForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = contactForm.elements.name.value;
+    const email = contactForm.elements.email.value;
+    const phone = contactForm.elements.phone.value;
+    const subject = contactForm.elements.subject.value;
+    const textarea = contactForm.elements.textarea.value;
+
+    localStorage.setItem(email, JSON.stringify({
+        Name: name,
+        Phone: phone,
+        Subject: subject,
+        Info: textarea
+    }));
+
+    alert("Form Sucessfully Submitted!");
+    contactForm.reset();
+});
